@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Leandro do Nascimento">
+<title>Heart animation with phrase</title>
+<style>
+    @charset "utf-8";
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ::selection{
+        background: transparent;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+    body{
+        background-image:
+        radial-gradient(circle,#960001,#be0001);
+        overflow: hidden;
+    }
+    #heart,#text{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-58%);
+    }
+    #heart{
+        width: 200px;
+        height: 170px;
+        animation: animateHeart 2s linear infinite;
+    }
+    @keyframes animateHeart {
+        0%{
+            transform: translate(-50%,-50%);
+        }
+        50%{
+            transform: translate(-50%,-50%) scale: 1.5;
+            
+        }
+
+    }
+   #text{
+        z-index: 1;
+        color:white;
+        font-family: cursive;
+        font-size: 20px;
+        padding-bottom: 30px;
+        text-shadow: #ff0000;
+        text-align: center;
+    }
+    #text::after{
+        content: "I Love You";
+        animation: animateText 7s linear infinite;
+    }
+    @keyframes animateText {
+        0%{
+            content: "I Love You";
+        }
+        25%{
+            content: "from the bottom";
+        }
+        50%{
+            content: "of my Heart !";
+        }
+ }
+    #circle1,#circle2{
+        width: 100px;
+        height: 100px;
+        float: left;
+        background: #ff0000;
+        border-radius: 50%;
+    }
+    #square1{
+        width: 130px;
+        height: 130px;
+        background: #ff0000;
+        clear: both;
+        position: relative;
+        border-radius: 100% 0 0 0;
+        left: 50%;
+        top: -88px;
+      transform: translate(-50%) rotate(45deg);
+      
+    }
+    #shadow{
+        width: 100px;
+        height: 5px;
+        background: #000000;
+        position: relative;
+        left: 50%;
+        transform: translate(-59%);
+        filter: blur(10px);
+    }
+</style>
+</head>
+<body>
+
+<div id="heart">
+<p id="text"></p>
+<div id="circle1"></div>
+<div id="circle2"></div>
+<div id="square1"></div>
+<div id="shadow"></div>
+</div>
+</body>
+</html>
